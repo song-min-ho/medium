@@ -1,0 +1,83 @@
+@charset "utf-8";
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css); 
+
+/*reset*/
+*{margin: 0; padding: 0; box-sizing: border-box;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+html, body{width: 100%; height: 100%;}
+body{font: normal 14px/1.4em 'Spoqa Han Sans',sans-serif; letter-spacing: -1px; color: #222; background-color: #fff;}
+img{border: none; vertical-align: top;}
+
+/*top*/ /*1200px 넘어가면 레이아웃 바뀜*/
+.top_wrap{width: 100%; height: 100px; border-bottom: 1px solid #eaeaea;}
+.top{width: 1200px; height: 100px; margin: 0 auto; min-width: 1200px;}
+.logo{width: 140px; height: 100px; float: left; padding-right: 190px;}
+
+/*gnb*/
+.gnb{height: 100px; float: left; font-size: 18px; font-weight: bold; margin-top: 20px;}
+.gnb > li{float: left; margin-top: 20px; padding-right: 50px; font-size: 18px;}
+.gnb > li > a{height: 40px; display: block;}
+.gnb > li > a:hover{border-bottom: 4px solid #004098;}
+.mdlx{width: 108px; height: 36px; float: left; margin-top: 32px; line-height: 36px; text-align: center; border-radius: 25px; background-color: #004098; color: #fff; cursor: pointer; font-weight: bold; letter-spacing: 3px;} /*margin-top 부모요소 막으려면 부모요소에 overflow: hidden;*/
+.language{float: right; margin-top: 35px;}
+.lan_arrow{margin-top: 10px; padding-left: 10px;}
+.lan_gnb{margin-left: 3px; margin-top: 5px; font-weight: bold; display: none;}
+.lan_gnb .KR{border-bottom: 2px solid #222;}
+.lan_gnb span{color: #ccc; position: relative; top: 3px;}
+
+/*full size submenu*/
+.fullsize{width: 100%; height: 600px;}
+.submenu{width: 100%; height: 300px; display: none;}
+
+/*brand*/
+.brand_wrap{width: 100%; height: 340px;}
+.brand{clear: both; width: 1200px; height: auto; margin: 0 auto; padding-top: 90px; position: relative;}
+.brand_title{font-size: 50px; line-height: 50px;}
+.brand_txt{margin-top: 40px; font-size: 18px; color: #888; line-height: 25px;}
+.navigation{position: absolute; right: 30px; top: 90px; font-size: 16px;}
+.navigation li{float: left; color: #888;}
+.navigation .selected{color: #222; position: relative;}
+.navigation li span{padding-left: 10px; padding-right: 20px; color: #888;}
+.navigation_dot{width: 10px; height: 10px; border-radius: 5px; background-color: #004098; position: absolute; top: 0; right: -15px;}
+
+/*philosophy*/
+.philosophy_wrap{width: 100%; height: 780px; background-color: #1B2638; color: #fff;}
+.philosophy{width: 1200px; height: auto; margin: 0 auto; padding-top: 100px; position: relative;}
+.philosophy_title{font-size: 36px; line-height: 36px;}
+.top_circle{width: 380px; height: 380px; border-radius: 190px; background-color: #1F88C0; padding-top: 150px; text-align: center; line-height: 35px; position: absolute; top: 100px; left: 50%; transform:translateX(-50%);}
+.top_circle h3{font-size: 28px;}
+.top_circle p{font-size: 16px;}
+.left_circle{width: 380px; height: 380px; border-radius: 190px; background-color: rgba(6, 57, 128, 0.8); padding-top: 150px; text-align: center; line-height: 35px; position: absolute; top: 310px; left: 200px;}
+.left_circle h3{font-size: 28px;}
+.left_circle p{font-size: 16px;}
+.right_circle{width: 380px; height: 380px; border-radius: 190px; background-color: rgba(18, 203, 230, 0.8); padding-top: 150px; text-align: center; line-height: 35px; position: absolute; top: 310px; left: 620px;}
+.right_circle h3{font-size: 28px;}
+.right_circle p{font-size: 16px;}
+.philosophy_header{position: absolute; top: 330px; left: 50%; transform: translateX(-50%);}
+
+/*slogan*/
+.slogan_wrap{width: 100%; height: 1000px;}
+.slogan{width: 1200px; height: 1000px; margin: 0 auto; background:url("../images/slogan_visual.png") no-repeat 450px -300px; padding-top: 100px;}
+.slogan_title{font-size: 36px; line-height: 36px; margin-bottom: 50px;}
+.slogan_title2{font-size: 53px; line-height: 65px; color: #063980; font-weight: bold; margin-bottom: 30px;}
+.slogan_title2 span{font-size: 74px;}
+.slogan_txt{font-size: 16px; line-height: 30px; color: #444;}
+.slogan_txt span{font-size: 30px; color: #222; display: inline-block; margin-bottom: 20px; font-weight: bold;}
+.next_button{width: 160px; height: 64px; margin: 200px auto 0;}
+.next_button_txt{font-size: 34px; color: #063980; font-weight: bold;}
+.next_button_txt span{font-size: 18px; color: #666; padding-left: 2px; margin-top: 7px; display: block;}
+
+/*bottom1*/
+.bottom1_wrap{width: 100%; height: 1000px; background-color: #282828;}
+.bottom1{width: 1200px; height: 1000px; margin: 0 auto;}
+.bottom_gnb{width: 1180px; height: 326px; color: #fff; padding-right: 400px;}
+.bottom_gnb li{float: left;}
+.bottom_submenu{}
+
+/*18 16 0.2*/
+
+
+
+
+
