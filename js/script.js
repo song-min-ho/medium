@@ -12,10 +12,11 @@ $(function () {
         $('.lan_gnb').stop().slideDown();        
     }, function(){
         $('.lan_gnb').stop().slideUp();
+    }) 
+    $('.language_wide').hover(function(){
+        $('.lan_wide_gnb').stop().slideDown();        
+    }, function(){
+        $('.lan_wide_gnb').stop().slideUp();
     })
-    
-
-
-
 
 });
