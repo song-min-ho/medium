@@ -1,48 +1,62 @@
 @charset "utf-8";
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css); 
+
+/*font*/
+@font-face{
+	font-family:Spoqa Han Sans;
+	src:local('Spoqa Han Sans'),		
+		url("../font/Spoqa Han Sans Regular.ttf") format('truetype');
+}
 
 /*reset*/
 *{margin: 0; padding: 0; box-sizing: border-box;}
 ul, li{list-style: none;}
 a{text-decoration: none; color: inherit;}
 html, body{width: 100%; height: 100%;}
-body{font: normal 14px/1.4em 'Spoqa Han Sans',sans-serif; letter-spacing: -1px; color: #222; background-color: #fff;}
+body{font: normal 14px/1.4em 'Spoqa Han Sans',sans-serif; color: #222; background-color: #fff;}
 img{border: none; vertical-align: top;}
 
 /*top*/ /*1200px 넘어가면 레이아웃 바뀜*/
-.top_wrap{width: 100%; height: 100px; border-bottom: 1px solid #eaeaea;}
+.top_wrap{width: 100%; height: 100px; border-bottom: 1px solid #eaeaea; position: fixed; z-index: 10; background-color: #fff;}
 .top{width: 1200px; height: 100px; margin: 0 auto; min-width: 1200px;}
 .logo{width: 140px; height: 100px; float: left; padding-right: 190px;}
 
 /*gnb*/
-.gnb{height: 100px; float: left; font-size: 18px; font-weight: bold; margin-top: 20px;}
-.gnb > li{float: left; margin-top: 20px; padding-right: 50px; font-size: 18px;}
-.gnb > li > a{height: 40px; display: block;}
-.gnb > li > a:hover{border-bottom: 4px solid #004098;}
+.gnb{float: left; font-size: 18px; font-weight: bold; margin-top: 20px;}
+.gnb > li{float: left; margin-top: 10px; font-size: 18px;}
+.roll_wrap{height: 40px; overflow: hidden;}
+.gnb > li > .roll_wrap > a{height: 40px; display: block; margin-right: 45px; padding-right: 5px; line-height: 40px; transition:all 0.6s;} /*패딩 a에 걸어줘야함*/
+.gnb > li > .roll_wrap > a:hover{transform: translateY(-40px);}
 .mdlx{width: 108px; height: 36px; float: left; margin-top: 32px; line-height: 36px; text-align: center; border-radius: 25px; background-color: #004098; color: #fff; cursor: pointer; font-weight: bold; letter-spacing: 3px;} /*margin-top 부모요소 막으려면 부모요소에 overflow: hidden;*/
-.language{float: right; margin-top: 35px;}
-.lan_arrow{margin-top: 10px; padding-left: 10px;}
-.lan_gnb{margin-left: 3px; margin-top: 5px; font-weight: bold; display: none;}
+.language{float: right; margin-top: 35px; cursor: pointer;}
+.lan_arrow{margin-top: 10px; margin-left: 10px; transition: all 0.6s;}
+.language:hover .lan_arrow{transform: rotate(180deg);}
+.lan_gnb{margin-left: 3px; margin-top: 5px; font-weight: bold; margin-top: 10px; display: none;}
 .lan_gnb .KR{border-bottom: 2px solid #222;}
 .lan_gnb span{color: #ccc; position: relative; top: 3px;}
 
-/*full size submenu*/
-.fullsize{width: 100%; height: 600px;}
-.submenu{width: 100%; height: 300px; display: none;}
+/*fullsize submenu*/
+.fullsize{width: 100%; height: 380px; position: fixed; top: 100px; z-index: 5; display: none;}
+.fullsize{background: #fff url('../images/gnb_visual.png') no-repeat -350px 0px; -webkit-background-size: 150%; background-size: 150%;}
+.fullsize_center{width: 1200px; height: 380px; margin: 0 auto;}
+/*here*/
+.submenu{height: 360px; font-weight: normal; line-height: 40px; font-size: 15px; color: #777; margin-top: 40px; display: none;}
+.submenu li a:hover{color: #004098;}
+.sns{margin-left: 190px; margin-top: 300px;}
+.sns img{margin-right: 20px;}
 
 /*brand*/
-.brand_wrap{width: 100%; height: 340px;}
+.brand_wrap{width: 100%; height: 420px; padding-top: 100px;}
 .brand{clear: both; width: 1200px; height: auto; margin: 0 auto; padding-top: 90px; position: relative;}
 .brand_title{font-size: 50px; line-height: 50px;}
 .brand_txt{margin-top: 40px; font-size: 18px; color: #888; line-height: 25px;}
-.navigation{position: absolute; right: 30px; top: 90px; font-size: 16px;}
+.navigation{position: absolute; right: 30px; top: 110px; font-size: 16px;}
 .navigation li{float: left; color: #888;}
 .navigation .selected{color: #222; position: relative;}
 .navigation li span{padding-left: 10px; padding-right: 20px; color: #888;}
 .navigation_dot{width: 10px; height: 10px; border-radius: 5px; background-color: #004098; position: absolute; top: 0; right: -15px;}
 
 /*philosophy*/
-.philosophy_wrap{width: 100%; height: 780px; background-color: #1B2638; color: #fff;}
+.philosophy_wrap{width: 100%; height: 790px; background-color: #1B2638; color: #fff;}
 .philosophy{width: 1200px; height: auto; margin: 0 auto; padding-top: 100px; position: relative;}
 .philosophy_title{font-size: 36px; line-height: 36px;}
 .top_circle{width: 380px; height: 380px; border-radius: 190px; background-color: #1F88C0; padding-top: 150px; text-align: center; line-height: 35px; position: absolute; top: 100px; left: 50%; transform:translateX(-50%);}
@@ -57,25 +71,47 @@ img{border: none; vertical-align: top;}
 .philosophy_header{position: absolute; top: 330px; left: 50%; transform: translateX(-50%);}
 
 /*slogan*/
-.slogan_wrap{width: 100%; height: 1000px;}
-.slogan{width: 1200px; height: 1000px; margin: 0 auto; background:url("../images/slogan_visual.png") no-repeat 450px -300px; padding-top: 100px;}
+.slogan_wrap{width: 100%; height: 800px;}
+.slogan{width: 1200px; height: 800px; margin: 0 auto; background:url("../images/slogan_visual.png") no-repeat 450px -300px; padding-top: 100px;}
 .slogan_title{font-size: 36px; line-height: 36px; margin-bottom: 50px;}
 .slogan_title2{font-size: 53px; line-height: 65px; color: #063980; font-weight: bold; margin-bottom: 30px;}
 .slogan_title2 span{font-size: 74px;}
 .slogan_txt{font-size: 16px; line-height: 30px; color: #444;}
 .slogan_txt span{font-size: 30px; color: #222; display: inline-block; margin-bottom: 20px; font-weight: bold;}
-.next_button{width: 160px; height: 64px; margin: 200px auto 0;}
+.next_button{width: 160px; height: 64px; margin: 180px auto 0;}
 .next_button_txt{font-size: 34px; color: #063980; font-weight: bold;}
 .next_button_txt span{font-size: 18px; color: #666; padding-left: 2px; margin-top: 7px; display: block;}
 
 /*bottom1*/
-.bottom1_wrap{width: 100%; height: 1000px; background-color: #282828;}
-.bottom1{width: 1200px; height: 1000px; margin: 0 auto;}
-.bottom_gnb{width: 1180px; height: 326px; color: #fff; padding-right: 400px;}
-.bottom_gnb li{float: left;}
-.bottom_submenu{}
+.bottom1_wrap{width: 100%; height: 500px; background-color: #282828;}
+.bottom1{width: 1200px; height: auto; margin: 0 auto; padding-top: 100px; font-weight: bold;}
+.bottom1 ul{float: left;}
+.bottom_gnb{width: 530px; height: 326px; color: #fff; line-height: 40px; padding-right: 30px;}
+.bottom_gnb > li{float: left; width: 90px; height: 40px; font-size: 18px; margin-right: 80px;} /*왜 width 안주면*/
+.bottom_gnb > li:nth-child(2){width: 60px;}
+.bottom_gnb > li:nth-child(3){margin-right: 0;}
+.bottom_gnb > li:after{content:''; display:block; width: 5px; height: 5px; background-color: #fff; border-radius: 3px; margin-top: 5px;}
+.bottom_submenu{margin-top: 20px;}
+.bottom_submenu > li{width: 170px; font-size: 16px;}
+.bottom_submenu > li > a{opacity: 0.2; transition:all 0.4s; font-weight: normal;}
+.bottom_submenu > li > a:hover{opacity: 1;}
+.bottom_gnb2{width: 200px; height: 326px; color: #fff; line-height: 40px; font-size: 18px;}
+.bottom_link{float: right;}
+.bottom_link div{width: 200px; height: 58px; padding-left: 30px; font-weight: bold; color: #fff; border: 2px solid #444; font-size: 13px; line-height: 58px; margin-bottom: 10px;}
+.mdlx2{background: url('../images/icon/icon_link.png') no-repeat 150px;}
+.PositionPaper{background: url('../images/icon/icon_download.png') no-repeat 150px;}
+.OnePager{background: url('../images/icon/icon_download.png') no-repeat 150px;}
 
-/*18 16 0.2*/
+/*bottom2*/
+.bottom2_wrap{width: 100%; height: 159px; background-color: #1a1a1a;}
+.bottom2{width: 1200px; height: 159px; margin: 0 auto; padding-top: 59px; color: #fff; letter-spacing: 0;}
+.logo_footer{width: 180px; height: 33px; float: left; margin-top: -12px; opacity: 0.6;}
+.info{float: left; width: 300px; height: 42px;}
+.info span.line{margin-right: 5px; margin-left: 5px; border-left: 1px solid rgba(255,255,255,0.3); height: 10px; display: inline-block;}
+.copyright{float: right;}
+.copyright span{float: right; opacity: 0.6;}
+.copyright_txt{opacity: 0.4}
+
 
 
 

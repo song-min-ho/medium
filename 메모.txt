@@ -1,0 +1,5 @@
+themedium.io/aboutus/brand.do?menuIdx=28
+
+
+#배운점
+font나 플러그인 링크로 걸면 여는 속도 느려진다.
