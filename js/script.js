@@ -1,4 +1,4 @@
-$(function () {
+$(function () {    
     /*menu hover*/
     $('.gnb').mouseover(function () {
         $('.submenu, .fullsize').stop().slideDown();  
@@ -6,8 +6,7 @@ $(function () {
     }).mouseout(function(){
         $('.submenu, .fullsize').stop().slideUp();        
         $(this).stop().animate({'height':'60px'})
-    })
-    
+    })    
     
     /*blueline*/
     $('.blueline').css('background-color','#004098')
@@ -49,6 +48,30 @@ $(function () {
         $('.lan_wide_gnb').stop().slideUp();
     })
     
+    /*top_button 초기설정*/
+     $('.top_button').css({'bottom': '-100px'});
+    
+    /*top_button 애니메이션*/
+    $(window).scroll(function () {
+        var height = $(document).scrollTop();
+        if (height > 1) {
+            $('.top_button').stop().animate({'bottom': '50px'});
+        }
+        if (height == 0) {
+            $('.top_button').stop().animate({'bottom': '-100px'});
+        };
+    });  
+
+    /*top_button 퍼센트차트*/
+    $(window).scroll(function () {
+        var height = $(document).scrollTop();    
+        var val = height / 19;
+        var $circle = $('.svg .cir');   
+        var r = $circle.attr('r');   //
+        var per = ((100 - val) / 100) * 3.1415 *r * 2; 
+        $circle.css({strokeDashoffset: per}); 
+    });
+    
     /*기업철학 애니메이션*/
     /*css 초기설정*/
     $('.philosophy_wrap').css('width','0')
@@ -80,4 +103,11 @@ $(function () {
         /*$(window).animate({scrollTop: 0}, 800); 이건 안됨*/
         $('html').animate({scrollTop: 0}, 800);        
         return false;
-    })});
+    })        
+
+});
+
+
+
+ 
+  

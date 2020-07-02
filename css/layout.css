@@ -21,6 +21,13 @@ img{border: none; vertical-align: top;}
 .logo_wide{width: 140px; height: 100px; float: left; margin-left: 50px; margin-right: 20px;}
 .logo{width: 140px; height: 100px; float: left; padding-right: 190px; display: none;}
 .top_button{width: 64px; height: 64px; padding-top: 18px; text-align: center; font-weight: bold; color: #ccc; border-radius: 32px; border: 4px solid #ccc; position: fixed; right: 50px; bottom: 50px; cursor: pointer;}
+.svg{position: relative; top: -41px; left: -4px;}
+.svg .cir{
+    stroke-dasharray: 188.5;
+    stroke-dashoffset:188.5;
+    transition: all 0.5s linear;
+}
+.svg {transform: rotate(-90deg);}
 
 /*줄이면서 작업할땐 max-width*/
 @media screen and (max-width:1500px) {
