@@ -20,9 +20,8 @@ img{border: none; vertical-align: top;}
 .top{width: 1200px; height: 100px; margin: 0 auto; min-width: 1200px; position: relative;}
 .logo_wide{width: 140px; height: 100px; float: left; margin-left: 50px; margin-right: 20px;}
 .logo{width: 140px; height: 100px; float: left; padding-right: 190px; display: none;}
-.top_button{width: 64px; height: 64px; padding-top: 18px; text-align: center; font-weight: bold; color: #ccc; border-radius: 32px; border: 4px solid #ccc; position: fixed; right: 50px; bottom: 50px; cursor: pointer;}
-.svg{position: relative; top: -41px; left: -4px;}
-.svg .cir{
+.top_button{width: 64px; height: 64px; position: fixed; right: 50px; bottom: 50px; cursor: pointer;}
+.svg .cir2{
     stroke-dasharray: 188.5;
     stroke-dashoffset:188.5;
     transition: all 0.5s linear;
@@ -36,11 +35,11 @@ img{border: none; vertical-align: top;}
 }
 
 /*gnb*/
-.gnb{width: 900px; height: 60px; float: left; font-size: 18px; font-weight: bold; margin-top: 20px; position: relative; overflow: hidden;}/*blueline, sns기준*/
-.gnb > li{float: left; margin-top: 10px; font-size: 18px; height: 40px;}
+.gnb{width: 800px; height: 60px; float: left; font-size: 18px; font-weight: bold; margin-top: 20px; position: relative; overflow: hidden;}/*blueline, sns기준*/
+.gnb > ul > li{float: left;  font-size: 18px; height: 40px; margin-top: -10px;}
 .roll_wrap{height: 40px; overflow: hidden;}
-.gnb > li > .roll_wrap > a{height: 40px; display: block; margin-right: 45px; padding-right: 5px; line-height: 40px; transition:all 0.6s;} /*패딩 a에 걸어줘야함*/
-.gnb > li > .roll_wrap > a:hover{transform: translateY(-40px);}
+.gnb > ul> li > .roll_wrap > a{height: 40px; display: block; margin-right: 45px; padding-right: 5px; line-height: 40px; transition:all 0.6s;} /*패딩 a에 걸어줘야함*/
+.gnb > ul> li > .roll_wrap > a:hover{transform: translateY(-40px);}
 .mdlx{width: 108px; height: 36px; float: right; margin-top: 32px; line-height: 36px; text-align: center; border-radius: 25px; background-color: #004098; color: #fff; cursor: pointer; font-weight: bold; letter-spacing: 3px;} /*margin-top 부모요소 막으려면 부모요소에 overflow: hidden;*/
 .blueline{width: 75px; height: 4px; position: absolute; top: 55px; left: 0;}
 .sns{position: absolute; top: 380px;}
@@ -69,7 +68,6 @@ img{border: none; vertical-align: top;}
 /*fullsize submenu*/
 .fullsize{width: 100%; height: 380px; position: fixed; top: 100px; z-index: 5; display: none;}
 .fullsize{background: #fff url('../images/gnb_visual.png') no-repeat -350px 0px; -webkit-background-size: 150%; background-size: 150%;}
-.fullsize_center{width: 1200px; height: 380px; margin: 0 auto;}
 .submenu{font-weight: normal; line-height: 40px; font-size: 15px; color: #777; margin-top: 40px; display: none;}
 .submenu li a:hover{color: #004098;}
 

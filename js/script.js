@@ -46,31 +46,7 @@ $(function () {
         $('.lan_wide_gnb').stop().slideDown();        
     }, function(){
         $('.lan_wide_gnb').stop().slideUp();
-    })
-    
-    /*top_button 초기설정*/
-     $('.top_button').css({'bottom': '-100px'});
-    
-    /*top_button 애니메이션*/
-    $(window).scroll(function () {
-        var height = $(document).scrollTop();
-        if (height > 1) {
-            $('.top_button').stop().animate({'bottom': '50px'});
-        }
-        if (height == 0) {
-            $('.top_button').stop().animate({'bottom': '-100px'});
-        };
-    });  
-
-    /*top_button 퍼센트차트*/
-    $(window).scroll(function () {
-        var height = $(document).scrollTop();    
-        var val = height / 19;
-        var $circle = $('.svg .cir');   
-        var r = $circle.attr('r');   //
-        var per = ((100 - val) / 100) * 3.1415 *r * 2; 
-        $circle.css({strokeDashoffset: per}); 
-    });
+    })    
     
     /*기업철학 애니메이션*/
     /*css 초기설정*/
@@ -97,15 +73,43 @@ $(function () {
         }        
     });    
     
+    /*top_button 초기설정*/
+     $('.top_button').css({'bottom': '-100px'});
+    
     /*top_button click*/
     $('.top_button').click(function(){
         /*$(window).scrollTop('0')*/
         /*$(window).animate({scrollTop: 0}, 800); 이건 안됨*/
         $('html').animate({scrollTop: 0}, 800);        
         return false;
-    })        
+    })      
+    
+    /*top_button 애니메이션*/
+    $(window).scroll(function () {
+        var height = $(document).scrollTop();
+        if (height > 1) {
+            $('.top_button').stop().animate({'bottom': '50px'});
+        }
+        if (height == 0) {
+            $('.top_button').stop().animate({'bottom': '-100px'});
+        };
+    });      
+
+    /*top_button 퍼센트차트*/
+    $(window).scroll(function () {
+        var height_percent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100
+        console.log(height_percent) // 1~100       
+        var $circle = $('.svg .cir2');   
+        var r = $circle.attr('r');   //
+        var per = -((height_percent) / 100) * 3.1415 *r * 2; 
+        $circle.css({strokeDashoffset: per});         
+    });
 
 });
+
+
+
+
 
 
 
