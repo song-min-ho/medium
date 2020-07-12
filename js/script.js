@@ -97,6 +97,9 @@ $(function () {
 
     /*top_button 퍼센트차트*/
     $(window).scroll(function () {
+		/*화면 아래 오브젝트를 기준으로 해도 어긋나고 화면 위의 오브젝트를 해도 어긋난다.
+		  화면위에서 윈도우 높이를 나누고 뺀값으로 해야
+		  스크롤 맨위일때 0 맨 아래일때 100이 나온다.*/
         var height_percent = ($(window).scrollTop() / ($(document).height() - $(window).height())) * 100
         console.log(height_percent) // 1~100       
         var $circle = $('.svg .cir2');   
