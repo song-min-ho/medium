@@ -1,53 +1,73 @@
-$(function () {    
-    /*menu hover*/
-    $('.gnb').mouseover(function () {
-        $('.submenu, .fullsize').stop().slideDown();  
-        $(this).stop().animate({'height':'460px'})
-    }).mouseout(function(){
+$(function () {        
+    $('.gnb').hover(function () {
+        $('.submenu, .fullsize').show();  
+        $(this).stop().animate({'height':'460px'});
+		$('.sns').show();
+    },function(){
         $('.submenu, .fullsize').stop().slideUp();        
-        $(this).stop().animate({'height':'60px'})
-    })    
+        $(this).stop().animate({'height':'60px'});
+		$('.sns').hide();
+	})
     
+	
     /*blueline*/
     $('.blueline').css('background-color','#004098')
-    $('.gnb > li:eq(1)').hover(function(){
+    $('.gnb > ul> li:eq(1)').hover(function(){
         $('.blueline').stop().animate({'left':'125px','width':'40px'}, 1000, 'easeOutCubic')
     }, function(){
         $('.blueline').stop().animate({'left':'','width':'75px'}, 1000, 'easeOutCubic')
     })
-    $('.gnb > li:eq(2)').hover(function(){
+    $('.gnb > ul>  li:eq(2)').hover(function(){
         $('.blueline').stop().animate({'left':'212px','width':'100px'}, 1000, 'easeOutCubic')
     }, function(){
         $('.blueline').stop().animate({'left':'','width':'75px'}, 1000, 'easeOutCubic')
     })
-    $('.gnb > li:eq(3)').hover(function(){
+    $('.gnb >ul>  li:eq(3)').hover(function(){
         $('.blueline').stop().animate({'left':'360px','width':'145px'}, 1000, 'easeOutCubic')
     }, function(){
         $('.blueline').stop().animate({'left':'','width':'75px'}, 1000, 'easeOutCubic')
     })
-    $('.gnb > li:eq(4)').hover(function(){
+    $('.gnb > ul> li:eq(4)').hover(function(){
         $('.blueline').stop().animate({'left':'558px','width':'50px'}, 1000, 'easeOutCubic')
     }, function(){
         $('.blueline').stop().animate({'left':'','width':'75px'}, 1000, 'easeOutCubic')
     })
-    $('.gnb > li:eq(5)').hover(function(){
+    $('.gnb > ul> li:eq(5)').hover(function(){
         $('.blueline').stop().animate({'left':'653px','width':'95px'}, 1000, 'easeOutCubic')
     }, function(){
         $('.blueline').stop().animate({'left':'','width':'75px'}, 1000, 'easeOutCubic')
     })
     
-    /*language hover*/
-    $('.language').hover(function(){
-        $('.lan_gnb').stop().slideDown();        
-    }, function(){
-        $('.lan_gnb').stop().slideUp();
-    }) 
+    /*language hover*/    
     $('.language_wide').hover(function(){
-        $('.lan_wide_gnb').stop().slideDown();        
+        $('.lan_wide_gnb').stop().slideDown()       
     }, function(){
-        $('.lan_wide_gnb').stop().slideUp();
+        $('.lan_wide_gnb').stop().slideUp()
     })    
+
+	/*language click*/
+	$('.mobile_language').toggle(function(){
+        $('.mobile_lan_gnb').stop().slideDown()
+		$('.lan_wide_arrow').addClass('click')
+    }, function(){
+        $('.mobile_lan_gnb').stop().slideUp()
+		$('.lan_wide_arrow').removeClass('click')
+    })    
+	
     
+	/*hamburger*/	
+	$('.hamburger').toggle(function(){		
+		$('.hamburger .line1').addClass('click');
+		$('.hamburger .line2').addClass('click');
+		$('.hamburger .line3').addClass('click');
+		$('.mobile_menu').stop().animate({'margin-left':'0'}, 1000, 'easeOutCubic');
+	}, function(){
+		$('.hamburger .line1').removeClass('click');
+		$('.hamburger .line2').removeClass('click');
+		$('.hamburger .line3').removeClass('click');
+		$('.mobile_menu').stop().animate({'margin-left':'-800px'}, 1000);
+	})
+	
     /*기업철학 애니메이션*/
     /*css 초기설정*/
     $('.philosophy_wrap').css('width','0')
@@ -68,7 +88,7 @@ $(function () {
     $('.slogan').css({'padding-top':'80px', 'opacity':'0'});       
     $(window).scroll(function () {
         var top = $(this).scrollTop()        
-        if(top > 900) {
+        if(top > 850) {
             $('.slogan').animate({'padding-top':'0', 'opacity':'1'}, 1000);        
         }        
     });    
@@ -107,14 +127,13 @@ $(function () {
         var per = -((height_percent) / 100) * 3.1415 *r * 2; 
         $circle.css({strokeDashoffset: per});         
     });
+	
+	/*philosophy 원 사이즈 조절*/
+	/*
+	var w = $('.top_circle').width()
+	console.log(w)
+	$('.top_circle').css('height', 'w')
+	*/
 
 });
-
-
-
-
-
-
-
- 
   
