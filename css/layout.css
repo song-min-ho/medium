@@ -121,10 +121,11 @@ img{border: none; vertical-align: top;}
 }
 
 /*philosophy*/
-.philosophy_wrap{width: 100%; height: 790px; background-color: #1B2638; color: #fff; margin: 0 auto; padding-left: 50px; padding-right: 50px;}
 .philosophy_wrap_animation{width: 100%; height: 790px; background: #fff;}
+.philosophy_wrap{width: 100%; height: 790px; background-color: #1B2638; color: #fff; margin: 0 auto; padding-left: 50px; padding-right: 50px;}
 .philosophy{width: 1200px; margin: 0 auto; padding-top: 100px; position: relative;}
 .philosophy_title{font-size: 36px; line-height: 36px;}
+.philosophy .circle_wrap{}
 .top_circle{width: 380px; height: 380px; border-radius: 190px; background-color: #1F88C0; padding-top: 150px; text-align: center; line-height: 35px; position: absolute; top: 100px; left: 50%; transform:translateX(-50%);}
 .top_circle h3{font-size: 28px;}
 .top_circle p{font-size: 16px;}
@@ -137,19 +138,37 @@ img{border: none; vertical-align: top;}
 .philosophy_header{position: absolute; top: 330px; left: 50%; transform: translateX(-50%);}
 
 @media screen and (max-width:768px){
-	.philosophy_wrap{height: 750px;}	
-	.philosophy{width: 100%;}
+	.philosophy_wrap_animation{width: 100%; height: 0px; padding-bottom: 120%;}	
+	.philosophy_wrap{width: 100%; height: 0px; padding-bottom: 120%; position: relative;}	
+	.philosophy{width: 100%; height: 0px; padding-bottom: 120%; padding-top: 50px; position: static;}
 	.philosophy_title{font-size: 30px;}
-	.top_circle{top: 200px; width: 250px; height: 250px;}	
-	.top_circle h3{margin-top: -60px; font-size: 17px;}
+	/*가로세로 비율 유지 : height 0주고 padding-bottom 퍼센트로 주기*/	
+	.top_circle{top: 140px; width: 50%; height: 40%;}	
+	.top_circle h3{margin-top: -75px; font-size: 16px;}
 	.top_circle p{font-size: 12px;}
-	.left_circle{top: 410px; left: 0; width: 250px; height: 250px;}
-	.left_circle h3{margin-top: -60px; font-size: 17px;}
+	.left_circle{top: 290px; left: 30px; width: 50%; height: 40%;}
+	.left_circle h3{margin-top: -75px; font-size: 16px;}
 	.left_circle p{font-size: 12px;}
-	.right_circle{top: 410px; right: 0; width: 250px; height: 250px;}	
-	.right_circle h3{margin-top: -60px; font-size: 17px;}
+	.right_circle{top: 290px; right: 30px; width: 50%; height: 40%;}	
+	.right_circle h3{margin-top: -75px; font-size: 16px;}
 	.right_circle p{font-size: 12px;}
-	.philosophy_header{top: 430px; display: none;}
+	.philosophy_header{top: 270px; width: 25%;}
+	.philosophy_header img{width: 100%; height: 100%;}
+}
+
+@media screen and (max-width:450px){
+	.philosophy_wrap_animation{padding-bottom: 150%;}	
+	.philosophy_wrap{padding-bottom: 150%;}	
+	.philosophy{width: 100%; height: 0px; padding-bottom: 150%; padding-top: 50px;}
+	.top_circle{top: 140px; width: 50%; height: 35%;}
+	.left_circle{top: 290px; left: 30px; width: 50%; height: 35%;}
+	.right_circle{top: 290px; right: 30px; width: 50%; height: 35%;}	
+	.top_circle h3{margin-top: -105px; font-size: 14px;}
+	.top_circle p{font-size: 10px;}
+	.left_circle h3{margin-top: -105px; font-size: 14px;}
+	.left_circle p{font-size: 10px;}
+	.right_circle h3{margin-top: -105px; font-size: 14px;}
+	.right_circle p{font-size: 10px;}
 }
 
 /*slogan*/
@@ -164,7 +183,7 @@ img{border: none; vertical-align: top;}
 .mobile_slogan_txt span{font-size: 30px; color: #222; display: inline-block; margin-bottom: 20px; font-weight: bold;}
 
 @media screen and (max-width:768px){
-	.slogan_wrap{margin-bottom: 200px; padding-bottom: 50px; padding-top: 15px;}
+	.slogan_wrap{margin-bottom: 200px; padding-bottom: 50px; padding-top: 55px;}
 	.slogan{width: 100%;}
 	.slogan_title{font-size: 30px; margin-bottom: 30px;}
 	.slogan_title2{font-size: 35px;}
